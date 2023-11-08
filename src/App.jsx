@@ -101,8 +101,8 @@ function App() {
   return (
     <div>
       <header className="header-bg">
-        <img src="../public/icons8-calculator-96.png"></img>
         <h1>CalciFY</h1>
+        <h2>Lets Calculate With Us</h2>
       </header>
 
       <div className="container">
