@@ -51,7 +51,12 @@ function reducer(state, { type, payload }) {
           state.currValue,
           state.prevValue
         );
-        return { ...state, currValue: result, operator: "", prevValue: "" };
+        return {
+          ...state,
+          currValue: "",
+          operator: payload,
+          prevValue: result,
+        };
       } else {
         return { ...state };
       }
@@ -94,74 +99,84 @@ function App() {
   );
 
   return (
-    <div className="container">
-      <div className="calc-grid">
-        <div className="output">
-          <div className="prev-res">
-            {prevValue}
-            {operator}
+    <div>
+      <header className="header-bg">
+        <img src="../public/icons8-calculator-96.png"></img>
+        <h1>CalciFY</h1>
+      </header>
+
+      <div className="container">
+        <div className="calc-grid">
+          <div className="output">
+            <div className="prev-res">
+              {prevValue}
+              {operator}
+            </div>
+            <div className="curr-res">{currValue}</div>
           </div>
-          <div className="curr-res">{currValue}</div>
+          <InputButton
+            type="clear-digit"
+            dispatch={dispatch}
+            className="span-two"
+          >
+            AC
+          </InputButton>
+          <InputButton type="delete-digit" dispatch={dispatch}>
+            DEL
+          </InputButton>
+          <InputButton type="choose-operation" dispatch={dispatch}>
+            ÷
+          </InputButton>
+          <InputButton type="add-digit" dispatch={dispatch}>
+            1
+          </InputButton>
+          <InputButton type="add-digit" dispatch={dispatch}>
+            2
+          </InputButton>
+          <InputButton type="add-digit" dispatch={dispatch}>
+            3
+          </InputButton>
+          <InputButton type="choose-operation" dispatch={dispatch}>
+            *
+          </InputButton>
+          <InputButton type="add-digit" dispatch={dispatch}>
+            4
+          </InputButton>
+          <InputButton type="add-digit" dispatch={dispatch}>
+            5
+          </InputButton>
+          <InputButton type="add-digit" dispatch={dispatch}>
+            6
+          </InputButton>
+          <InputButton type="choose-operation" dispatch={dispatch}>
+            +
+          </InputButton>
+          <InputButton type="add-digit" dispatch={dispatch}>
+            7
+          </InputButton>
+          <InputButton type="add-digit" dispatch={dispatch}>
+            8
+          </InputButton>
+          <InputButton type="add-digit" dispatch={dispatch}>
+            9
+          </InputButton>
+          <InputButton type="choose-operation" dispatch={dispatch}>
+            -
+          </InputButton>
+          <InputButton type="add-digit" dispatch={dispatch}>
+            .
+          </InputButton>
+          <InputButton type="add-digit" dispatch={dispatch}>
+            0
+          </InputButton>
+          <InputButton type="evaluate" dispatch={dispatch} className="span-two">
+            =
+          </InputButton>
         </div>
-        <InputButton
-          type="clear-digit"
-          dispatch={dispatch}
-          className="span-two"
-        >
-          AC
-        </InputButton>
-        <InputButton type="delete-digit" dispatch={dispatch}>
-          DEL
-        </InputButton>
-        <InputButton type="choose-operation" dispatch={dispatch}>
-          ÷
-        </InputButton>
-        <InputButton type="add-digit" dispatch={dispatch}>
-          1
-        </InputButton>
-        <InputButton type="add-digit" dispatch={dispatch}>
-          2
-        </InputButton>
-        <InputButton type="add-digit" dispatch={dispatch}>
-          3
-        </InputButton>
-        <InputButton type="choose-operation" dispatch={dispatch}>
-          *
-        </InputButton>
-        <InputButton type="add-digit" dispatch={dispatch}>
-          4
-        </InputButton>
-        <InputButton type="add-digit" dispatch={dispatch}>
-          5
-        </InputButton>
-        <InputButton type="add-digit" dispatch={dispatch}>
-          6
-        </InputButton>
-        <InputButton type="choose-operation" dispatch={dispatch}>
-          +
-        </InputButton>
-        <InputButton type="add-digit" dispatch={dispatch}>
-          7
-        </InputButton>
-        <InputButton type="add-digit" dispatch={dispatch}>
-          8
-        </InputButton>
-        <InputButton type="add-digit" dispatch={dispatch}>
-          9
-        </InputButton>
-        <InputButton type="choose-operation" dispatch={dispatch}>
-          -
-        </InputButton>
-        <InputButton type="add-digit" dispatch={dispatch}>
-          .
-        </InputButton>
-        <InputButton type="add-digit" dispatch={dispatch}>
-          0
-        </InputButton>
-        <InputButton type="evaluate" dispatch={dispatch} className="span-two">
-          =
-        </InputButton>
       </div>
+      <footer className="footer-bg">
+        <p>Made by Naman Yadav With ❤️</p>
+      </footer>
     </div>
   );
 }

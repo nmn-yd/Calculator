@@ -6,14 +6,26 @@
 
 body {
   margin: 0;
-  background: linear-gradient(to right, #00aaff, #00ff6c);
+
+  background-color: #19494d;
+}
+
+.header-bg {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #090b1b9a;
+  color: white;
+  font-weight: bolder;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .container {
   display: flex; /* Create a flex container */
   justify-content: center; /* Horizontally center the grid */
   align-items: center; /* Vertically center the grid */
-  height: 100vh; /* Make the container take up the full viewport height */
+  height: 75vh; /* Make the container take up the full viewport height */
 }
 
 .calc-grid {
@@ -21,6 +33,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 6rem);
   grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+  border: 1px solid #19494d;
 }
 
 .span-two {
@@ -29,7 +42,7 @@ body {
 
 .output {
   grid-column: -1/1;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: #090b1b;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -51,11 +64,18 @@ body {
 .calc-grid > button {
   font-size: 2rem;
   cursor: pointer;
-  border: 2px solid white;
+
   outline: none;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: #19494d;
 }
 .calc-grid > button:hover,
 .calc-grid > button:focus {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #617b83;
+}
+
+.footer-bg {
+  text-align: center;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  color: whitesmoke;
 }

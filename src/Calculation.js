@@ -8,11 +8,15 @@ function Calculation(operator, currValue, prevValue) {
     result = Number(currValue) - Number(prevValue);
   } else if (operator === "*") {
     result = Number(currValue) * Number(prevValue);
-  } else {
-    result = (Number(currValue) / Number(prevValue)).toFixed(4);
+  } else if (operator === "÷") {
+    result = Number(prevValue) / Number(currValue);
+    result = result.toString();
+    if (result.includes(".")) {
+      result = Number(result).toFixed(4);
+    }
   }
 
-  return result;
+  return result.toString();
 }
 
 export default Calculation;
